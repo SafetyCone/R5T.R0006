@@ -1,0 +1,23 @@
+{
+  "Version": 1,
+  "Hash": "MBTavK0GJkWPkUqxQTtHSDdAFhRx+evTWzIJ+5KP2RM=",
+  "Source": "R5T.R0006",
+  "BasePath": "_content/R5T.R0006",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [
+    {
+      "Identity": "C:\\Code\\DEV\\Git\\GitHub\\SafetyCone\\R5T.R0005\\source\\R5T.R0005\\R5T.R0005.csproj",
+      "Version": 2,
+      "Source": "R5T.R0005",
+      "GetPublishAssetsTargets": "ComputeReferencedStaticWebAssetsPublishManifest;GetCurrentProjectPublishStaticWebAssetItems",
+      "AdditionalPublishProperties": "Configuration=Debug;Platform=AnyCPU",
+      "AdditionalPublishPropertiesToRemove": "TargetFramework;RuntimeIdentifier;SelfContained",
+      "GetBuildAssetsTargets": "GetCurrentProjectBuildStaticWebAssetItems",
+      "AdditionalBuildProperties": "Configuration=Debug;Platform=AnyCPU",
+      "AdditionalBuildPropertiesToRemove": "TargetFramework;RuntimeIdentifier;SelfContained"
+    }
+  ],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}
