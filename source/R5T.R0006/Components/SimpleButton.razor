@@ -14,7 +14,7 @@
     /// The action to perform upon click.
     /// </summary>
     [Parameter]
-    public Action<MouseEventArgs> OnClick { get; set; }
+    public EventCallback<MouseEventArgs> OnClick { get; set; }
 
     [Parameter]
     public string Text { get; set; }

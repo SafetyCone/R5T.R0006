@@ -1,0 +1,52 @@
+@namespace R5T.R0006
+
+@inject NavigationManager NavigationManager
+
+@{
+    var currentUrlPath = Instances.UrlOperator.GetCurrentUrlPath(
+        this.NavigationManager);
+
+    var currentCssClass = this.CommonCssClass + " " + this.CurrentCssClass;
+    var inactiveCssClass = this.CommonCssClass + " " + this.InactiveCssClass;
+}
+
+@foreach (var pair in this.LinkValuesByHref)
+{
+    var isCurrent = pair.Key == currentUrlPath;
+    var cssClass = isCurrent
+        ? currentCssClass
+        : inactiveCssClass
+        ;
+
+    <a
+        href="@(pair.Key)"
+        class="@(cssClass)">
+        @(pair.Value)
+    </a>
+}
+
+@code{
+    /// <summary>
+    /// A dictionary of link values (link text values) by href.
+    /// </summary>
+    [Parameter]
+    public Dictionary<string, string> LinkValuesByHref { get; set; }
+
+    /// <summary>
+    /// The CSS class content that is common to both the current and default links.
+    /// </summary>
+    [Parameter]
+    public string CommonCssClass { get; set; }
+
+    /// <summary>
+    /// The CSS class content for the current link.
+    /// </summary>
+    [Parameter]
+    public string CurrentCssClass { get; set; }
+
+    /// <summary>
+    /// The CSS class content for inactive (non-current) links.
+    /// </summary>
+    [Parameter]
+    public string InactiveCssClass { get; set; }
+}

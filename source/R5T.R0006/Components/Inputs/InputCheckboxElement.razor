@@ -1,0 +1,29 @@
+@*Namespace specified in directory-level _Imports.razor.*@
+
+@inherits InputCheckboxBase
+
+
+<input
+    type="checkbox"
+    disabled="@this.Disabled"
+    class="@this.CssClass"
+    @onchange=this.OnChange
+    checked="@this.Value"
+/>
+
+
+@code{
+    /// <summary>
+    /// The CSS class for the input element.
+    /// </summary>
+    [Parameter]
+    public string CssClass { get; set; }
+
+
+    private async Task OnChange(ChangeEventArgs e)
+    {
+        this.Value = (bool)e.Value;
+
+        await this.ValueChanged.InvokeAsync(this.Value);
+    }
+}

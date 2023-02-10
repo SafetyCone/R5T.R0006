@@ -1,0 +1,23 @@
+@*Namespace specified in directory-level _Imports.razor.*@
+
+@inherits InputTextBase
+
+
+<input
+    type="text"
+    disabled=@this.Disabled
+    class="@this.CssClass"
+    @oninput=this.OnInput
+    @onkeyup=this.OnKeyUp
+    placeholder="@this.Placeholder"
+/>
+
+
+@code{
+    private async Task OnInput(ChangeEventArgs e)
+    {
+        this.Value = e.Value.ToString();
+
+        await this.ValueChanged.InvokeAsync(this.Value);
+    }
+}
