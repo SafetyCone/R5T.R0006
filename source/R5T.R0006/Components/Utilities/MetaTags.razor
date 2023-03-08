@@ -1,0 +1,34 @@
+﻿@namespace R5T.R0006
+
+
+<HeadContent>
+    @*Always include the charset.*@
+    <meta charset="utf-8" />
+
+    <PageTitle>@(this.Model.Title)</PageTitle>
+
+    @*Used by Google to form the blurb underneath the search result link.*@
+    @*A good description contains 1) an accurate and concise description of web page content, 2) a benefit to the visitor of the website, and 3) a call to action to entice potential visitors to click.*@
+    <meta name="description" content="@(this.Model.Description)" />
+
+    @*Set minimum and maximum scales to prevent any shinking funny-business on mobile.*@
+    @*Allow user scalable (no zooming out, but up-to 5x zooming in as low-vision accessibility guideline).*@
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=5" />
+
+    @if (this.Model.Robots.WasSet)
+    {
+        <meta name="robots" content="@(this.Model.Robots.Value)" />
+    }
+
+    @if (this.Model.FaviconHref.WasSet)
+    {
+        @*Favicon by explicit link, not by usual /favicon.ico convention.*@
+        <link href="@(this.Model.FaviconHref.Value)" rel="icon" type="image/x-icon" asp-append-version="true" />
+    }
+</HeadContent>
+
+
+@code {
+    [Parameter, EditorRequired]
+    public MetaTagsModel Model { get; set; }
+}
