@@ -8,7 +8,7 @@ namespace R5T.R0006
     /// <summary>
     /// The basic HTML structure, including head and body.
     /// </summary>
-    [RazorComponentMarker]
+    [RazorLayoutMarker]
     public partial class LayoutHtml : IRazorComponentMarker
     {
 

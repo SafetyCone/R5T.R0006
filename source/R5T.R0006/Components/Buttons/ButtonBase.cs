@@ -3,6 +3,8 @@
 using Microsoft.AspNetCore.Components;
 using Microsoft.AspNetCore.Components.Web;
 
+using R5T.T0154;
+
 using R5T.R0006.Components;
 
 
@@ -11,6 +13,7 @@ namespace R5T.R0006.Buttons
     /// <summary>
     /// Base class for buttons, providing functioal parameters other than styling.
     /// </summary>
+    [RazorComponentMarker]
     public abstract class ButtonBase : ComponentBase,
         IHasChildContent,
         IHasOnClick
